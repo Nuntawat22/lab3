@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Windows.Forms;
 
 namespace lab3
 {
@@ -20,16 +21,14 @@ namespace lab3
             String Major = m6.Text;
 
             int iYear = Int32.Parse(Brithday);
-            //int Mo = Int32.Parse(Height);
-            int Mj = Int32.Parse(Grade);
+            double Mj = Double.Parse(Grade);
 
-            //create obj from Student
             Student newNamjo = new Student(name, id, iYear, Height, Mj , Major);
             this.Namjo.Add(newNamjo);
 
             BindingSource source = new BindingSource();
             source.DataSource = this.Namjo;
-            this.dataGridView1.DataSource = source;
+            this.Mo.DataSource = source;
             //clear textbox
             this.m1.Text = "";
             this.m2.Text = "";
@@ -37,6 +36,76 @@ namespace lab3
             this.m4.Text = "";
             this.m5.Text = "";
             this.m6.Text = "";
+            
+            M.Text = (from DataGridViewRow row in Mo.Rows
+                        where row.Cells[1].FormattedValue.ToString() != string.Empty
+                        select Convert.ToDouble(row.Cells[4].FormattedValue)).Max().ToString();
+            double max = 0;
+            for (int i = 0; i <= Mo.Rows.Count - 1; i++)
+            {
+                if (max < double.Parse(Mo.Rows[i].Cells[4].Value.ToString()))
+                {
+                    max = double.Parse(Mo.Rows[i].Cells[4].Value.ToString());
+                }
+            }
+
+            M.Text = max.ToString();
+
+            double[] cmax = new double[Mo.Rows.Count];
+            cmax = (from DataGridViewRow row in Mo.Rows
+                    where row.Cells[1].FormattedValue.ToString() != string.Empty
+                    select Convert.ToDouble(row.Cells[4].FormattedValue)).ToArray();
+
+            M.Text = cmax.Max().ToString();
+            //min
+            
+            k2.Text = (from DataGridViewRow row in Mo.Rows
+                        where row.Cells[1].FormattedValue.ToString() != string.Empty
+                        select Convert.ToDouble(row.Cells[4].FormattedValue)).Min().ToString();
+           
+            
+
+            double min = 0;
+            for (int i = 0; i <= Mo.Rows.Count - 1; i++)
+            {
+                if (min < double.Parse(Mo.Rows[i].Cells[4].Value.ToString()))
+                {
+                    min = double.Parse(Mo.Rows[i].Cells[4].Value.ToString());
+                }
+            }
+
+            k2.Text = min.ToString();
+
+            double[] cmin = new double[Mo.Rows.Count];
+            cmin = (from DataGridViewRow row in Mo.Rows
+                    where row.Cells[1].FormattedValue.ToString() != string.Empty
+                    select Convert.ToDouble(row.Cells[4].FormattedValue)).ToArray();
+
+
+            k2.Text = cmin.Min().ToString();
+
+            int mj = Mo.Rows.Count;
+            mmm.Text = mj.ToString();
+        }
+
+        private void M_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void k1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

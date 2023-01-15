@@ -41,14 +41,20 @@
             this.m5 = new System.Windows.Forms.TextBox();
             this.m6 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Mo = new System.Windows.Forms.DataGridView();
             this.ชื่อ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.รหัสนักศึกษา = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ปีเกิด = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ส่วนสูง = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.เกรด = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.สาขา = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.K = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.M = new System.Windows.Forms.TextBox();
+            this.k2 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.mmm = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.Mo)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -170,21 +176,22 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // dataGridView1
+            // Mo
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Mo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Mo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ชื่อ,
             this.รหัสนักศึกษา,
             this.ปีเกิด,
             this.ส่วนสูง,
             this.เกรด,
             this.สาขา});
-            this.dataGridView1.Location = new System.Drawing.Point(291, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(497, 328);
-            this.dataGridView1.TabIndex = 13;
+            this.Mo.Location = new System.Drawing.Point(291, 12);
+            this.Mo.Name = "Mo";
+            this.Mo.RowTemplate.Height = 25;
+            this.Mo.Size = new System.Drawing.Size(497, 182);
+            this.Mo.TabIndex = 13;
+            this.Mo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.M_CellContentClick);
             // 
             // ชื่อ
             // 
@@ -222,13 +229,71 @@
             this.สาขา.HeaderText = "สาขา";
             this.สาขา.Name = "สาขา";
             // 
+            // K
+            // 
+            this.K.AutoSize = true;
+            this.K.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.K.Location = new System.Drawing.Point(313, 211);
+            this.K.Name = "K";
+            this.K.Size = new System.Drawing.Size(39, 21);
+            this.K.TabIndex = 14;
+            this.K.Text = "Max";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(313, 242);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(37, 21);
+            this.label8.TabIndex = 15;
+            this.label8.Text = "Min";
+            // 
+            // M
+            // 
+            this.M.Location = new System.Drawing.Point(379, 211);
+            this.M.Name = "M";
+            this.M.Size = new System.Drawing.Size(85, 23);
+            this.M.TabIndex = 16;
+            this.M.TextChanged += new System.EventHandler(this.k1_TextChanged);
+            // 
+            // k2
+            // 
+            this.k2.Location = new System.Drawing.Point(379, 244);
+            this.k2.Name = "k2";
+            this.k2.Size = new System.Drawing.Size(85, 23);
+            this.k2.TabIndex = 17;
+            this.k2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(512, 221);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(51, 15);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "จำนวนนศ";
+            // 
+            // mmm
+            // 
+            this.mmm.Location = new System.Drawing.Point(569, 218);
+            this.mmm.Name = "mmm";
+            this.mmm.Size = new System.Drawing.Size(100, 23);
+            this.mmm.TabIndex = 19;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.mmm);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.k2);
+            this.Controls.Add(this.M);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.K);
+            this.Controls.Add(this.Mo);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.m6);
             this.Controls.Add(this.m5);
@@ -244,7 +309,8 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.Mo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -265,12 +331,18 @@
         private TextBox m5;
         private TextBox m6;
         private Button button1;
-        private DataGridView dataGridView1;
+        private DataGridView Mo;
+        private Label K;
+        private Label label8;
+        private TextBox M;
+        private TextBox k2;
         private DataGridViewTextBoxColumn ชื่อ;
         private DataGridViewTextBoxColumn รหัสนักศึกษา;
         private DataGridViewTextBoxColumn ปีเกิด;
         private DataGridViewTextBoxColumn ส่วนสูง;
         private DataGridViewTextBoxColumn เกรด;
         private DataGridViewTextBoxColumn สาขา;
+        private Label label7;
+        private TextBox mmm;
     }
 }

@@ -12,10 +12,10 @@ namespace lab3
         public String id;
         public int brithday;
         public String height;
-        public int grade;
+        public double grade;
         public string major;
 
-        public Student(String name, String id, int brithday, String height, int grade, string major)
+        public Student(String name, String id, int brithday, String height, double grade, string major)
         {
             this.name = name;
             this.id = id;
@@ -40,7 +40,7 @@ namespace lab3
         {
             get { return height; }
         }
-        public int n5
+        public double n5
         {
             get { return grade; }
         }
