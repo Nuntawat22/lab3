@@ -11,6 +11,7 @@ namespace lab3
             InitializeComponent();
         }
 
+        // Add
         private void button1_Click(object sender, EventArgs e)
         {
             String name = m1.Text;
@@ -29,6 +30,7 @@ namespace lab3
             BindingSource source = new BindingSource();
             source.DataSource = this.Namjo;
             this.Mo.DataSource = source;
+
             //clear textbox
             this.m1.Text = "";
             this.m2.Text = "";
@@ -45,18 +47,20 @@ namespace lab3
             {
                 if (max < double.Parse(Mo.Rows[i].Cells[4].Value.ToString()))
                 {
+
                     max = double.Parse(Mo.Rows[i].Cells[4].Value.ToString());
+
                 }
             }
 
             M.Text = max.ToString();
 
-            double[] cmax = new double[Mo.Rows.Count];
-            cmax = (from DataGridViewRow row in Mo.Rows
+            double[] Mmax = new double[Mo.Rows.Count];
+            Mmax = (from DataGridViewRow row in Mo.Rows
                     where row.Cells[1].FormattedValue.ToString() != string.Empty
                     select Convert.ToDouble(row.Cells[4].FormattedValue)).ToArray();
 
-            M.Text = cmax.Max().ToString();
+            M.Text = Mmax.Max().ToString();
             //min
             
             k2.Text = (from DataGridViewRow row in Mo.Rows
@@ -70,42 +74,23 @@ namespace lab3
             {
                 if (min < double.Parse(Mo.Rows[i].Cells[4].Value.ToString()))
                 {
+
                     min = double.Parse(Mo.Rows[i].Cells[4].Value.ToString());
+
                 }
             }
 
             k2.Text = min.ToString();
 
-            double[] cmin = new double[Mo.Rows.Count];
-            cmin = (from DataGridViewRow row in Mo.Rows
+            double[] Mmin = new double[Mo.Rows.Count];
+            Mmin = (from DataGridViewRow row in Mo.Rows
                     where row.Cells[1].FormattedValue.ToString() != string.Empty
                     select Convert.ToDouble(row.Cells[4].FormattedValue)).ToArray();
 
-
-            k2.Text = cmin.Min().ToString();
+            k2.Text = Mmin.Min().ToString();
 
             int mj = Mo.Rows.Count;
             mmm.Text = mj.ToString();
-        }
-
-        private void M_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void k1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

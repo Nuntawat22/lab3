@@ -191,7 +191,6 @@
             this.Mo.RowTemplate.Height = 25;
             this.Mo.Size = new System.Drawing.Size(497, 182);
             this.Mo.TabIndex = 13;
-            this.Mo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.M_CellContentClick);
             // 
             // ชื่อ
             // 
@@ -255,7 +254,6 @@
             this.M.Name = "M";
             this.M.Size = new System.Drawing.Size(85, 23);
             this.M.TabIndex = 16;
-            this.M.TextChanged += new System.EventHandler(this.k1_TextChanged);
             // 
             // k2
             // 
@@ -263,7 +261,6 @@
             this.k2.Name = "k2";
             this.k2.Size = new System.Drawing.Size(85, 23);
             this.k2.TabIndex = 17;
-            this.k2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label7
             // 
@@ -309,7 +306,6 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Mo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
